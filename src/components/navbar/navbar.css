@@ -1,0 +1,28 @@
+
+.navbar-nav{
+    margin-left: auto !important;
+    margin-right: 1rem;
+}
+
+.navbar-brand{
+    color: lightgray;
+}
+.navbar-brand:hover{
+    color:#fff;
+}
+.nav-link{
+    color: lightgray;
+}
+.nav-link:hover{
+    
+    color: #fff !important;
+}
+
+.nv-btn{
+    margin-right: 2rem;
+    background-color: black;
+  
+}
+.user-icon{
+    margin-right: 0.8rem !important;
+}
