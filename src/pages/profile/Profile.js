@@ -48,12 +48,12 @@ export function MyBookings({user}){
             const response=(await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRooms/getbookingbyuserid',{userid:user._id})).data;
             setbookings(response)
             setloading(false)
-           console.log("res",response)
+          
           
         }
         catch(err){
 
-            console.log(err)
+            
             setloading(false)
             seterr(true)
         }
@@ -68,7 +68,7 @@ export function MyBookings({user}){
         setloading(true)
         const response=(await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRooms/cancelBooking',{bookingid,roomid})).data
         setloading(false)
-        console.log(response)
+       
       }
       catch(err){
         console.log(err)
