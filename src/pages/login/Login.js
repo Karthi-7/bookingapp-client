@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 import Loading from '../../components/loading/Loading'
 import Error from '../../components/error/Error'
 
@@ -10,7 +11,7 @@ function Login() {
     const [password,setpassword]=useState("")
     const[loading,setloading]=useState(false)
     const[err,seterr]=useState()
-
+   
     const handleLogin=async()=>{
       
             const user={
