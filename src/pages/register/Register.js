@@ -27,7 +27,7 @@ function Register() {
             }
             try{
               setloading(true)
-             const response= await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/register',user).data
+             const response= await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRooms/register',user).data
              setloading(false)
              await swal("Good !", "You Registered sucessfully!", "success");
 

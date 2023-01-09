@@ -65,7 +65,7 @@ function Bookingpage() {
       console.log(bookingDetails)
        try{
         
-          const response=await axios.post('https://orbiz-rooms-client.onrender.com/orbizRoom/bookroom',bookingDetails)
+          const response=await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRoom/bookroom',bookingDetails)
             await swal("Good !", "Your Room Booked sucessfully!", "success");
             window.location.href="/profile"
          
