@@ -4,6 +4,7 @@ import "./register.css";
 import Loading from '../../components/loading/Loading'
 import Error from '../../components/error/Error'
 import Success from "../../components/succes/Success";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert"
 
 function Register() {
@@ -14,7 +15,7 @@ function Register() {
     const[loading,setloading]=useState(false)
     const[err,seterr]=useState()
     const [sucess,setsucess]=useState()
-
+   const navigate=useNavigate()
    const handleRegister=async()=>{
         if(password == cpassword){
             const user={
@@ -26,7 +27,7 @@ function Register() {
             }
             try{
               setloading(true)
-             const response= await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/register',user).data
+             const response= await axios.post('https://orbiz-rooms-client.onrender.com/register',user).data
              setloading(false)
              await swal("Good !", "You Registered sucessfully!", "success");
 
@@ -35,7 +36,7 @@ function Register() {
              setemail("")
              setpassword("")
              setcpassword("")
-             window.location.href="/login"
+            navigate('/login')
 
             }catch(err){
               console.log(err)

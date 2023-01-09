@@ -21,7 +21,7 @@ function Login() {
             }
           try{
             setloading(true)
-            const response=(await axios.post('https://hotel-booking-app-orbiz-server.onrender.com/orbizRooms/login',user)).data
+            const response=(await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/login',user)).data
             setloading(false)
             localStorage.setItem('currentUser',JSON.stringify(response))
             window.location.href="/home"
