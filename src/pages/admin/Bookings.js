@@ -11,7 +11,7 @@ function Bookings() {
     const fetchData=async()=>{
         try{
             setloading(true)
-          const data=(await axios.get('https://hotel-booking-app-orbiz-server.onrender.com/orbizRooms/getAllBookings')).data
+          const data=(await axios.get('https://orbiz-rooms-client.onrender.com/orbizRooms/getAllBookings')).data
           setloading(false)
           setbookings(data)
           

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import swal from "sweetalert"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -22,6 +23,8 @@ function AddRooms() {
   const [amenties, setamenties] = useState();
   const[loading,setloading]=useState(false)
   const[err,seterr]=useState()
+
+  const navigate=useNavigate()
 const addRoom=async()=>{
   const newroom={
     name,
@@ -38,14 +41,14 @@ const addRoom=async()=>{
     description,
     amenties
   }
-
+ 
   try{
     setloading(true)
-     const data=await (await axios.post('https://hotel-booking-app-orbiz-server.onrender.com/orbizrooms/addroomdata',newroom)).data
+     const data=await (await axios.post('https://orbiz-rooms-client.onrender.com/orbizrooms/addroomdata',newroom)).data
      console.log(data)
      setloading(false)
      await swal("Good !", "Your Room added sucessfully!", "success");
-     window.location.href='/home'
+     navigate('/home')
   
   }
   catch(err){
@@ -55,6 +58,8 @@ const addRoom=async()=>{
     swal("oops!", "something went wrong!", "error");
   }
 }
+
+
   return (
     <>
       <h5 className="mb-3">Fill the Room Details</h5>

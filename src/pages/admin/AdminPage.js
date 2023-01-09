@@ -1,4 +1,5 @@
 import React,{useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import { Tabs } from 'antd';
 import Bookings from "./Bookings";
 import Rooms from "./Rooms";
@@ -6,9 +7,10 @@ import User from "./User";
 import AddRooms from "./AddRooms";
 
 function AdminPage() {
+  const navigate=useNavigate()
     useEffect(()=>{
      if(!JSON.parse(localStorage.getItem('currentUser')).isAdmin){
-        window.location.href="/home"
+       navigate("/home")
 
      }
     },[])

@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Loading from '../../components/loading/Loading'
 import Error from '../../components/error/Error'
 
@@ -11,7 +11,8 @@ function Login() {
     const [password,setpassword]=useState("")
     const[loading,setloading]=useState(false)
     const[err,seterr]=useState()
-   
+   const navigate=useNavigate()
+
     const handleLogin=async()=>{
       
             const user={
@@ -24,7 +25,7 @@ function Login() {
             const response=(await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/login',user)).data
             setloading(false)
             localStorage.setItem('currentUser',JSON.stringify(response))
-            window.location.href="/home"
+            navigate('/home')
 
           }
           catch(err){

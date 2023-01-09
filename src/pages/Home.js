@@ -29,7 +29,7 @@ function Home() {
     const fetchData=async()=>{
         try{
             setloading(true)
-            const response=(await axios.get('https://hotel-booking-app-orbiz-server.onrender.com/orbizRooms/getdata')).data.data
+            const response=(await axios.get('https://orbiz-rooms-client.onrender.com/orbizRooms/getdata')).data.data
             setdata(response)
             setduplicateRoom(response)
             setloading(false)

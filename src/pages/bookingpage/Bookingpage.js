@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import Loading from '../../components/loading/Loading'
 import Error from '../../components/error/Error'
 import swal from "sweetalert"
+import { useNavigate } from 'react-router-dom'
 
 import "./bookingpage.css"
 import moment from 'moment'
@@ -18,15 +19,15 @@ function Bookingpage() {
     const toDate=moment(checkout,'DD-MM-YYYY')
     const totalDays=moment.duration(toDate.diff(fromDate)).asDays()+1;
     const totalRent=totalDays * room.rentperday
-
+   const navigate=useNavigate()
 
     const fetchData=async()=>{
       if(!localStorage.getItem('currentUser')){
-        window.location.reload="/login"
+       navigate('/login')
       }
         try{
             setloading(true)
-            const response=(await axios.post('https://hotel-booking-app-orbiz-server.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
+            const response=(await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
             setroom(response)
             setloading(false)
             
@@ -64,7 +65,7 @@ function Bookingpage() {
       console.log(bookingDetails)
        try{
         
-          const response=await axios.post('https://hotel-booking-app-orbiz-server.onrender.com/orbizRoom/bookroom',bookingDetails)
+          const response=await axios.post('https://orbiz-rooms-client.onrender.com/orbizRoom/bookroom',bookingDetails)
             await swal("Good !", "Your Room Booked sucessfully!", "success");
             window.location.href="/profile"
          
