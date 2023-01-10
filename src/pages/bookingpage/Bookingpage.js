@@ -30,7 +30,7 @@ function Bookingpage() {
             setloading(true)
             
           
-            const response=await (await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data
+            const response=await (await axios.post('/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
            
             setroom(response)
           
@@ -71,7 +71,7 @@ function Bookingpage() {
       console.log(bookingDetails)
        try{
         
-          const response=await axios.post('https://orbiz-roomz-derver.onrender.com/orbizRoom/bookroom',bookingDetails)
+          const response=await axios.post('/orbizRoom/bookroom',bookingDetails)
             await swal("Good !", "Your Room Booked sucessfully!", "success");
             navigate("/profile")
          

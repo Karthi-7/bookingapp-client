@@ -44,7 +44,7 @@ const addRoom=async()=>{
  
   try{
     setloading(true)
-     const data=await (await axios.post('https://orbiz-roomz-derver.onrender.com/orbizrooms/addroomdata',newroom)).data
+     const data=await (await axios.post('/orbizrooms/addroomdata',newroom)).data
      console.log(data)
      setloading(false)
      await swal("Good !", "Your Room added sucessfully!", "success");

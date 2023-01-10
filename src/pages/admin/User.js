@@ -10,7 +10,7 @@ function User() {
     const fetchData=async()=>{
         try{
             setloading(true)
-            const data=(await axios.get('https://orbiz-roomz-derver.onrender.com/orbizRooms/users/getdata')).data
+            const data=(await axios.get('/orbizRooms/users/getdata')).data
           setusers(data)
           setloading(false)
           
