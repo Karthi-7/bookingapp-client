@@ -27,7 +27,7 @@ function Register() {
             }
             try{
               setloading(true)
-             const response= await axios.post('/orbizRooms/register',user).data
+             const response= await axios.post(`${process.env.REACT_APP_BASE_URL}/orbizRooms/register`,user).data
              setloading(false)
              await swal("Good !", "You Registered sucessfully!", "success");
 

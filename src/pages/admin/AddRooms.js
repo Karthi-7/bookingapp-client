@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 function AddRooms() {
   const [name, setname] = useState("");
   const [phoneNumber, setphone] = useState("");
@@ -44,7 +45,7 @@ const addRoom=async()=>{
  
   try{
     setloading(true)
-     const data=await (await axios.post('/orbizrooms/addroomdata',newroom)).data
+     const data=await (await axios.post(`${process.env.REACT_APP_BASE_URL}/orbizrooms/addroomdata`,newroom)).data
      console.log(data)
      setloading(false)
      await swal("Good !", "Your Room added sucessfully!", "success");

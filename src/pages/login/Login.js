@@ -22,7 +22,7 @@ function Login() {
             }
           try{
             setloading(true)
-            const response=(await axios.post('/orbizRooms/login',user)).data
+            const response=(await axios.post(`${process.env.REACT_APP_BASE_URL}/orbizRooms/login`,user)).data
             setloading(false)
             localStorage.setItem('currentUser',JSON.stringify(response))
             navigate('/home')

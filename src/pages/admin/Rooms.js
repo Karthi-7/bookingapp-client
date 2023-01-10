@@ -11,7 +11,7 @@ function Rooms() {
     const fetchData=async()=>{
         try{
             setloading(true)
-          const data=(await axios.get('/orbizRooms/getdata')).data.data
+          const data=(await axios.get(`${process.env.REACT_APP_BASE_URL}/orbizRooms/getdata`)).data.data
           setrooms(data)
           console.log("rooms",rooms)
           setloading(false)

@@ -29,7 +29,7 @@ function Home() {
     const fetchData=async()=>{
         try{
             setloading(true)
-            const response=(await axios.get('/orbizRooms/getdata')).data.data
+            const response=(await axios.get(`${process.env.REACT_APP_BASE_URL}/orbizRooms/getdata`)).data.data
             console.log("res",response)
             setdata(response)
             setduplicateRoom(response)

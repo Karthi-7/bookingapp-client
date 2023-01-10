@@ -71,7 +71,7 @@ function Bookingpage() {
       console.log(bookingDetails)
        try{
         
-          const response=await axios.post('/orbizRoom/bookroom',bookingDetails)
+          const response=await axios.post(`${process.env.REACT_APP_BASE_URL}/orbizRoom/bookroom`,bookingDetails)
             await swal("Good !", "Your Room Booked sucessfully!", "success");
             navigate("/profile")
          
