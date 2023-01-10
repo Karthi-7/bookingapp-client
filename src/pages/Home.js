@@ -30,6 +30,7 @@ function Home() {
         try{
             setloading(true)
             const response=(await axios.get('https://orbiz-roomz-derver.onrender.com/orbizRooms/getdata')).data.data
+            console.log("res",response)
             setdata(response)
             setduplicateRoom(response)
             setloading(false)
