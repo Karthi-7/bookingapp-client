@@ -29,7 +29,7 @@ function Bookingpage() {
             setloading(true)
             
           
-            const response=(await axios.get('https://orbiz-rooms-client.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
+            const response=await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})
             console.log("res",response)
             setroom(response)
             setloading(false)
