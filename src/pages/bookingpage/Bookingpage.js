@@ -18,8 +18,8 @@ function Bookingpage() {
     const fromDate=moment(checkin,'DD-MM-YYYY')
     const toDate=moment(checkout,'DD-MM-YYYY')
     const totalDays=moment.duration(toDate.diff(fromDate)).asDays()+1;
-    const [totalAmount,setTotalAmount]=useState()
-    // const totalRent=totalDays * room.rentperday
+
+    const totalRent=totalDays * room.rentperday
    const navigate=useNavigate()
 
     const fetchData=async()=>{
@@ -30,10 +30,10 @@ function Bookingpage() {
             setloading(true)
             
           
-            const response= (await axios.post('https://orbiz-rooms-client.onrender.com/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
+            const response= (await axios.post('/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
            
             setroom(response)
-            setTotalAmount(totalDays * room.rentperday)
+          
            
             setloading(false)
             
@@ -66,7 +66,7 @@ function Bookingpage() {
         fromDate:fromDate.format('DD-MM-YYYY'),
         toDate:toDate.format('DD-MM-YYYY'),
         totalDays,
-        totalAmount
+        totalRent
        }
       console.log(bookingDetails)
        try{
@@ -106,7 +106,7 @@ function Bookingpage() {
            
             <p><span>Total days :{totalDays} </span> </p>
           <p><span>Rent per day :</span>{room.rentperday} </p>
-          <p><span>Total Amount :</span>{totalAmount} </p>
+          <p><span>Total Amount :</span>{totalRent} </p>
 
           </div>
           <div className="button " style={{float:"right"}}>
