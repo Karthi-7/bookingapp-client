@@ -111,7 +111,7 @@ function Bookingpage() {
             <hr />
            
             <p><span>Total days :{totalDays} </span> </p>
-          <p><span>Rent per day :</span>{rentperday} </p>
+          <p><span>Rent per day :</span>{100} </p>
           <p><span>Total Amount :</span>{totalRent} </p>
 
           </div>
