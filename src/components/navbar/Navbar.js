@@ -12,13 +12,13 @@ function Navbar() {
 
   return (
     <div className="navv">
-      <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <Link class="navbar-brand" to="/home">
+      <nav className="navbar navbar-expand-lg ">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/home">
             OrbizRooms
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -26,16 +26,16 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style={{color:"whiteSmoke"}}></i></span>
+            <span className="navbar-toggler-icon"><i className="fa-solid fa-bars" style={{color:"whiteSmoke"}}></i></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-5">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav me-5">
               {user ? (
                 <>
                   {/* <h1 style={{ color: "whitesmoke" }}>{user.data.name}</h1> */}
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="btn btn-dark dropdown-toggle me-5 nv-btn"
+                      className="btn btn-dark dropdown-toggle me-5 nv-btn"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -46,13 +46,13 @@ function Navbar() {
                      {user.name}
                     </button>
                     <div
-                      class="dropdown-menu"
+                      className="dropdown-menu"
                       aria-labelledby="dropdownMenuButton"
                     >
-                      <a class="dropdown-item" href="/profile">
+                      <a className="dropdown-item" href="/profile">
                         Profile
                       </a>
-                      <a class="dropdown-item" href="/logout" onClick={logout}>
+                      <a className="dropdown-item" href="/logout" onClick={logout}>
                         Logout
                       </a>
                      
@@ -61,17 +61,17 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <li class="nav-item ">
+                  <li className="nav-item ">
                     <Link
-                      class="nav-link active"
+                      className="nav-link active"
                       aria-current="page"
                       to="/register"
                     >
                       Register
                     </Link>
                   </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to="/login">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
                       Login
                     </Link>
                   </li>

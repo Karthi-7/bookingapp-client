@@ -129,7 +129,7 @@ function Home() {
     </div>
      <div className="row justify-content-center">
      {loading ? (<Loading />) : (data.map((item)=>(
-        <div className="col-md-10 mt-2 ">
+        <div key={item._id} className="col-md-10 mt-2 ">
             <Room room={item} checkin={checkin} checkout={checkout} />
         </div>
 
