@@ -17,9 +17,12 @@ function Bookingpage() {
     const {roomId,checkin,checkout}=useParams()
     const fromDate=moment(checkin,'DD-MM-YYYY')
     const toDate=moment(checkout,'DD-MM-YYYY')
+    const[rentperday,setrentperday]=useState()
     const totalDays=moment.duration(toDate.diff(fromDate)).asDays()+1;
-    const rentperday= room.rentperday
+  
+   
 
+   
     const totalRent=totalDays * rentperday
    const navigate=useNavigate()
 
@@ -34,6 +37,7 @@ function Bookingpage() {
             const response=await (await axios.post('/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
            
             setroom(response)
+            setrentperday(response.rentperday)
           
            
             setloading(false)
