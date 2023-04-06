@@ -67,7 +67,8 @@ function Bookingpage() {
         userId:JSON.parse(localStorage.getItem('currentUser'))._id,
         fromDate:fromDate.format('DD-MM-YYYY'),
         toDate:toDate.format('DD-MM-YYYY'),
-        rentperday,
+        rentperday:room.rentperday,
+          
         totalDays,
         totalRent
        }
