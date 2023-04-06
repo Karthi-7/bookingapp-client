@@ -32,7 +32,7 @@ function Bookingpage() {
             setloading(true)
             
           
-            const response=await (await axios.post('/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout})).data.data
+            const response=await (await axios.post('/orbizRooms/getroomById',{roomId:roomId,checkin:checkin,checkout:checkout,rentperday:rentperday})).data.data
            
             setroom(response)
           
